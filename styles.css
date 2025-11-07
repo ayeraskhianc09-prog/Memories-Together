@@ -1,0 +1,173 @@
+* {
+            box-sizing: border-box; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: lavender;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: Quicksand, sans-serif;
+            transition: margin-left 0.3s ease; /* For shifting content when nav opens */
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+        
+        p {
+            font-family: Quicksand, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* --- New Navigation Structure (Hamburger Menu) --- */
+
+        /* Button to open the menu */
+        #menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: #b5afd9;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            line-height: 0;
+            z-index: 2000; /* Ensure button is on top of everything */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* The Sliding Side Panel */
+        #side-nav {
+            height: 100%; /* Full height */
+            width: 0; /* Starts hidden */
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            background-color: #d1c4e9; /* Light purple */
+            overflow-x: hidden;
+            padding-top: 60px;
+            transition: 0.3s;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Class added by JavaScript to open the panel */
+        #side-nav.open {
+            width: 280px; /* Width when open */
+        }
+
+        /* Menu List (Vertical Stacking) */
+        #side-nav .nav-menu {
+            list-style: none;
+            padding: 20px 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Stacks items vertically */
+            align-items: center;
+        }
+
+        #side-nav .nav-menu li {
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        #side-nav .nav-link {
+            text-decoration: none;
+            display: block;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        /* Calendar Icon Styling */
+        .calendar-icon {
+            width: 120px; 
+            height: auto; 
+            max-width: 90%; 
+            border-radius: 8px; /* Optional: adds nice rounded corners */
+            transition: transform 0.2s;
+        }
+        
+        .calendar-icon:hover {
+            transform: scale(1.05);
+        }
+
+        /* Close Button inside the Side Panel */
+        #side-nav .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            color: #6a1b9a;
+            text-decoration: none;
+        }
+
+        /* Header Adjustment to prevent fixed nav overlap */
+        header {
+            padding-top: 80px; /* Push content down past the fixed button */
+            margin-top: 0;
+        }
+        
+        /* Main Content Styling */
+        main {
+            padding: 20px;
+        }
+        
+        section {
+            padding: 20px 0;
+            margin-bottom: 40px;
+            border-top: 1px solid #c0c0d9;
+        }
+
+        figure {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            display: inline-block;
+            max-width: 90%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        figure img {
+            width: 100%; /* Make images responsive */
+            height: auto;
+            max-width: 400px; /* Max size for larger images */
+            border-radius: 4px;
+        }
+        
+        figcaption {
+            font-style: italic;
+            padding: 10px 0 0;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        /* Text Block Formatting */
+        article p {
+            white-space: pre-line; /* Respects line breaks from your original HTML */
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 0 15px;
+            text-align: left;
+        }
